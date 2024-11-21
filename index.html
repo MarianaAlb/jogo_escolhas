@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="musicaFundo" autoplay loop>
+        <source src="./audio/audioHP.m4a">
+        <source src="./audio/audioHPmp3.mp3">
+    </audio>
+    <section id="inicio" class="conteudo">
+        <h1>Bem-vindo ao Hogwarts Adventure</h1>
+        <button onclick="mostrarSecao('instrucao')">Iniciar Jogo</button>
+    </section>
+    <section id="instrucao" class="conteudo">
+        <h2>Você é um estudante de Hogwarts no tempo de Harry Potter. Algo terrível está prestes a acontecer, e suas escolhas determinarão o destino da escola!</h2>
+        <h2>Boa sorte!</h2>
+        <button onclick="mostrarSecao('cena-1')">Jogar</button>
+    </section>
+    <section id="cena-1" class="conteudo">
+        <h2>É uma noite escura, e você percebe uma movimentação estranha no castelo. O que você faz?</h2>
+        <button onclick="mostrarSecao('cena-2')">Seguir os sons misteriosos.</button>
+        <button onclick="mostrarSecao('cena-3')">Ir até a sala de Dumbledore para avisá-lo.</button>
+        <button onclick="mostrarSecao('fim-1')">Ignorar e voltar para sua casa comunal.</button>
+    </section>
+    <section id="fim-1" class="conteudo">
+        <h2>Você não faz nada e dorme tranquilamente. No dia seguinte, descobre que os Comensais da Morte causaram um grande ataque, e Hogwarts foi tomada.</h2>
+        <h2>Fim da história.</h2>
+        <button onclick="reiniciar('inicio')">Reiniciar</button>
+    </section>
+    <section id="cena-2" class="conteudo">
+        <h2>Você segue os sons misteriosos e percebe um grupo de Comensais da Morte entrando furtivamente na Sala Precisa. Você decide:</h2>
+        <button onclick="mostrarSecao('fim-2')">Segui-los em silêncio para ver o que estão planejando.</button>
+        <button onclick="mostrarSecao('cena-3')">Correr para buscar ajuda com os professores</button>
+        <button onclick="mostrarSecao('fim-3')">Confrontá-los diretamente com sua varinha.</button>
+    </section>
+    <section id="fim-2" class="conteudo">
+        <h2>Você os ouve falando sobre um artefato das trevas que pode destruir Hogwarts. Porém, eles o detectam, e você é capturado.</h2>
+        <h2>Fim: Você foi capturado pelos Comensais.</h2>
+        <button onclick="reiniciar('inicio')">Reiniciar</button>
+    </section>
+    <section id="fim-3" class="conteudo">
+        <h2>Você tenta enfrentá-los, mas eles são muitos e te derrotam rapidamente.</h2>
+        <h2>Fim: Você foi morto pelos Comensais</h2>
+        <button onclick="reiniciar('inicio')">Reiniciar</button>
+    </section>
+    <section id="cena-3" class="conteudo">
+        <h2>Você corre pelos corredores e encontra a Professora McGonagall. Ela ouve seu relato e diz que a situação é grave, mas precisa que você escolha o próximo passo:</h2>
+        <button onclick="mostrarSecao('cena-4')">Acompanhar McGonagall para confrontar os Comensais da Morte juntos.</button>
+        <button onclick="mostrarSecao('fim-4')">Ir para a torre da sua casa e alertar os outros estudantes para se protegerem.</button>
+        <button onclick="mostrarSecao('fim-5')">Voltar para espionar os Comensais enquanto McGonagall reúne ajuda.</button>
+    </section>
+    <section id="fim-4" class="conteudo">
+        <h2>Os Comensais avançam enquanto você tenta avisar os outros. Eles chegam à torre e atacam.</h2>
+        <h2>Fim: Você e seus colegas são capturados.</h2>
+        <button onclick="reiniciar('inicio')">Reiniciar</button>
+    </section>
+    <section id="fim-5" class="conteudo">
+        <h2>Você é descoberto e morto antes que McGonagall chegue.</h2>
+        <h2>Fim: Você foi morto pelos Comensais.</h2>
+        <button onclick="reiniciar('inicio')">Reiniciar</button>
+    </section>
+    <section id="cena-4" class="conteudo">
+        <h2>Você e a Professora McGonagall chegam à Sala Precisa. Os Comensais estão reunidos em torno de um objeto estranho que emite uma luz verde sinistra. É uma antiga relíquia das trevas que pode destruir Hogwarts. McGonagall luta contra os Comensais, mas precisa da sua ajuda. Você decide:</h2>
+        <button onclick="mostrarSecao('fim-6')">Ajudar McGonagall no duelo, lançando feitiços nos Comensais da Morte.</button>
+        <button onclick="mostrarSecao('cena-5')">Tentar destruir a relíquia enquanto McGonagall distrai os Comensais.</button>
+        <button onclick="mostrarSecao('fim-7')">Fugir e buscar reforços enquanto ela mantém a batalha.</button>
+    </section>
+    <section id="fim-6" class="conteudo">
+        <h2>Você luta bravamente, mas é atingido por um feitiço mortal.</h2>
+        <h2>Fim: Você morreu, mas seu sacrifício permitiu que McGonagall destruísse a relíquia e salvasse Hogwarts.</h2>
+        <button onclick="reiniciar('inicio')">Reiniciar</button>
+    </section>
+    <section id="fim-7" class="conteudo">
+        <h2>Você consegue trazer ajuda, mas os Comensais fogem com a relíquia. Hogwarts é deixada vulnerável.</h2>
+        <h2>Fim: A escola foi salva por ora, mas a ameaça persiste.</h2>
+        <button onclick="reiniciar('inicio')">Reiniciar</button>
+    </section>
+    <section id="cena-5" class="conteudo">
+        <h2>Você se aproxima da relíquia com cuidado, tentando descobrir como destruí-la. Ela parece protegida por um feitiço antigo, mas há símbolos gravados que podem ser a chave. Enquanto os Comensais e McGonagall duelam, você decide:</h2>
+        <button onclick="mostrarSecao('fim-8')">Usar "Reducto" e destruir a relíquia à força.</button>
+        <button onclick="mostrarSecao('fim-9')">Tentar decifrar os símbolos e desfazer o feitiço de proteção.</button>
+        <button onclick="mostrarSecao('fim-10')">Arriscar um feitiço experimental que você leu em um livro na biblioteca.</button>
+    </section>
+    <section id="fim-8" class="conteudo">
+        <h2>A relíquia explode, mas causa uma onda de energia que destrói parte de Hogwarts. Você sobrevive, mas a escola sofre grandes perdas.</h2>
+        <h2>Fim: Você salvou Hogwarts, mas a um custo alto.</h2>
+        <button onclick="reiniciar('inicio')">Reiniciar</button>
+    </section>
+    <section id="fim-9" class="conteudo">
+        <h2>Você usa seu conhecimento e desfaz o feitiço com sucesso. A relíquia é destruída sem causar danos à escola.</h2>
+        <h2>Fim: Você salvou Hogwarts com inteligência e coragem!</h2>
+        <button onclick="reiniciar('inicio')">Reiniciar</button>
+    </section>
+    <section id="fim-10" class="conteudo">
+        <h2>O feitiço sai do controle e destrói os Comensais, mas também tira sua vida no processo.</h2>
+        <h2>Fim: Seu sacrifício heroico salvou Hogwarts.</h2>
+        <button onclick="reiniciar('inicio')">Fim.</button>
+    </section>
+    <script src="java.js"></script>
+</body>
+</html>
